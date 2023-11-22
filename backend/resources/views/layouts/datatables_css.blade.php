@@ -1,0 +1,1 @@
+<link rel="stylesheet" href="{{route('plugins/datatables/dataTables.bootstrap4.css')}}">
