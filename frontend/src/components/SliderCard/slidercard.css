@@ -1,0 +1,121 @@
+.homeSlide .box {
+	margin-top: 0px;
+	padding: 0 40px 60px;
+	/* background-color:#58B19F; */
+}
+
+.homeSlide h1 {
+	font-size: 45px;
+	line-height: 50px;
+	margin: 50px 0 20px 0;
+}
+
+.homeSlide p {
+	margin: 20px 0;
+}
+
+.homeSlide ul {
+	position: absolute;
+	bottom: 20px;
+}
+
+.homeSlide ul li {
+	border: 2px solid #b8b7b7;
+	border-radius: 50%;
+	padding: 10px;
+}
+
+.homeSlide ul li button {
+	background: transparent !important;
+	color: transparent !important;
+}
+
+.homeSlide ul li button::before {
+	font-size: 15px !important;
+	color: #0f3460;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	margin: auto;
+}
+
+/* Styles for small screens (up to 767px) */
+@media screen and (max-width: 767px) {
+	.homeSlide ul li button::before {
+		font-size: 12px !important;
+		/* Reduce font size for small screens */
+	}
+}
+
+/* Styles for very small screens (up to 479px) */
+@media screen and (max-width: 479px) {
+	.homeSlide ul li button::before {
+		font-size: 10px !important;
+		/* Further reduce font size for very small screens */
+	}
+}
+
+.slick-prev:before {
+	color: #0f3460;
+	font-size: 29px;
+}
+
+.slick-next:before {
+	color: #0f3460;
+	font-size: 29px;
+}
+
+/* Styles for small screens (up to 767px) */
+@media screen and (max-width: 767px) {
+
+	.slick-prev:before,
+	.slick-next:before {
+		font-size: 25px;
+		/* Reduce font size for small screens */
+	}
+}
+
+/* Styles for very small screens (up to 479px) */
+@media screen and (max-width: 479px) {
+
+	.slick-prev:before,
+	.slick-next:before {
+		font-size: 20px;
+		/* Further reduce font size for very small screens */
+	}
+}
+
+.slick-next {
+	right: -3px;
+}
+
+.slick-prev {
+	left: -3px;
+}
+
+
+.homeSlide .box img {
+	width: 100%;
+	max-height: 300px;
+	object-fit: contain;
+}
+
+/* slidercard.css */
+
+/* Style for the SHOP NOW button */
+.btn-primary {
+	border: 2px solid #0f3460;
+	/* Add a border to the button */
+	padding: 10px 20px;
+	/* Adjust padding for better appearance */
+	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+	/* Add a smooth transition for hover effect */
+}
+
+/* Hover effect for the SHOP NOW button */
+.btn-primary:hover {
+	background-color: #0f3460;
+	/* Change background color on hover */
+	color: white;
+	/* Change text color on hover */
+}

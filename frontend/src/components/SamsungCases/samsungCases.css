@@ -1,0 +1,28 @@
+.shop-by-brands {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically */
+    margin-left: 20px; /* Adjust margin from the left as needed */
+  }
+  
+  .brand-image {
+    width: 80px; /* Reduce the width of each image */
+    height: 60px; /* Reduce the height of each image */
+    margin: 10px; /* Add margin to space the images */
+  }
+
+
+  /* Style for the banner image */
+  .samsung-ultra-banner img {
+    width: 100%;
+    height: auto;
+  }
+  .samsung-main-banner {
+    text-align: center; /* Center the image horizontally */
+  }
+  
+  .samsung-main-banner img {
+    max-width: 100%; 
+    height: auto; 
+  }
+  

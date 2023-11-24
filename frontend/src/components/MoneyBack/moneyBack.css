@@ -1,0 +1,32 @@
+.guarantee-page {
+    max-width: fit-content;
+    padding: 20px;
+  }
+  
+  .guarantee-page  h5 {
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .guarantee-page  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .guarantee-page li {
+    margin-bottom: 20px;
+  }
+  
+  .guarantee-page h6 {
+    color: #333;
+  }
+  
+  .guarantee-page p {
+    color: #555;
+  }
+
+  .f-banner img{
+    width: 100%;
+    height:auto;
+  }
+  

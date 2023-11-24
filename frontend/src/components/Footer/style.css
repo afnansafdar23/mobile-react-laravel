@@ -1,0 +1,163 @@
+footer {
+  background-color: #0f3460;
+  padding: 80px 0;
+  color: #fff;
+}
+
+footer .box {
+  padding: 0 20px;
+}
+
+footer h1 {
+  /* margin: 0; */
+  font-size: 20px;
+  font-weight: 700;
+  max-width: max-content;
+}
+
+footer .logo {
+  color: white;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-bottom: 10px;
+  margin-left: -20px;
+}
+footer h2 {
+  font-size: 20px;
+}
+
+footer .row {
+  justify-content: center;
+}
+
+footer p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/* social media icon */
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: -10px;
+}
+
+.social-icons a{
+  text-decoration: none;
+  color: #fff;
+  margin: 5px; 
+}
+
+.follows {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*"Email Us" title */
+.email-us-footer {
+  display:block;
+  align-items: center;
+  width: fit-content;
+  gap: 2px;
+}
+
+.email-us-footer h2 {
+  font-size: 15px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  color:#fff;
+}
+
+.email-us-footer input {
+  width: 100%;
+  padding: 5px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+
+.follows p {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.follows span {
+  margin-right: 10px;
+}
+
+.follows a {
+  color: #fff; 
+  text-decoration: none;
+}
+
+
+
+footer h2 {
+  margin-bottom: 20px;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  margin-bottom: 10px;
+  opacity: 0.5;
+  list-style: none; 
+}
+
+footer li a {
+  color: #fff; 
+  text-decoration: none; 
+}
+
+footer li a:hover {
+  color: #01a3a4; 
+}
+
+.footer-bottom {
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  position: relative;
+}
+
+.footer-bottom a:not(:last-child):after {
+  content: "|";
+  margin-left: 10px;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom a {
+    margin: 10px 0;
+    display: block;
+  }
+
+  .footer-bottom a:not(:last-child):after {
+    content: "";
+    margin-left: 0;
+  }
+}
+ 

@@ -1,0 +1,91 @@
+/* Default styles for all screen sizes */
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-banner{
+  max-width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 600px) {
+  .faq-banner {
+    /* Responsive for mobile devices */
+    width: 10%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .faq-banner {
+    /* responsive for iPad and tablets */
+    width: 100%;
+    height: auto;
+  }
+}
+.faq-container h1 {
+  color: darkslategray;
+}
+
+.faq-list {
+  margin-top: 20px;
+}
+
+.faq-list p {
+  background-color: #bdc3c7;
+  padding-left: 15px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+.question h2 {
+  font-size: 14px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+.toggle-button {
+  background-color: #f0f0f0;
+  border: 1px solid dimgrey;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.toggle-button.open {
+  background-color: #e0e0e0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .faq-container {
+    padding: 10px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Make it full width for smaller screens */
+  }
+
+  .faq-item {
+    margin-bottom: 10px; /* Reduce margin for smaller screens */
+  }
+
+  .question h2 {
+    font-size: 12px; /* Reduce font size for smaller screens */
+  }
+}
+
+

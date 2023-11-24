@@ -1,0 +1,112 @@
+.shop-by-brands {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically */
+    margin-left: 20px; /* Adjust margin from the left as needed */
+  }
+  
+  .brand-image {
+    width: 80px; /* Reduce the width of each image */
+    height: 60px; /* Reduce the height of each image */
+    margin: 10px; /* Add margin to space the images */
+  }
+
+
+   .banner-zflip img{
+    max-width: 100%;
+    height: auto;
+   }
+
+   .banner-protector img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .banner-zflip img {
+        /* Adjust styles for smaller screens */
+        /* For example, you could set max-width to a specific value */
+        max-width: 80%;
+    }
+}
+
+.desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 5px;
+  
+    /* Responsive Styles */
+    @media screen and (max-width: 600px) {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      align-items: center;
+      text-align: center; /* Center the text on smaller screens */
+    }
+  }
+  
+  .desc p {
+    font-size: 16px;
+    margin-left: 20px;
+    color: #333;
+  
+    /* Responsiveness */
+    @media screen and (max-width: 600px) {
+      margin: 10px 0; 
+      text-align: center; 
+    }
+  }
+  
+  .desc img {
+    max-width: 100%;
+    display: block;
+    margin-left: 20px;
+  
+    /* Responsiveness */
+    @media screen and (max-width: 600px) {
+      margin: 10px 0; 
+    }
+  }
+  
+
+  h4 {
+    margin-left: 20em; 
+  
+    /* Responsiveness */
+    @media screen and (max-width: 600px) {
+      margin: 0; 
+      text-align: center; 
+    }
+  }
+  
+  hr {
+    width: auto; 
+  
+    /* Responsiveness */
+    @media screen and (max-width: 600px) {
+      width: 80%; 
+      margin: 10px auto; 
+    }
+  }
+  
+  
+  
+  /* Responsive for iPad */
+@media only screen and (max-width: 768px) {
+  .holderHeading {
+     margin-left: 8em; 
+     margin-top: 2px;
+
+   }
+ }
+ 
+ /* Responsive for Mobile*/
+ @media only screen and (max-width: 480px) {
+   .holderHeading {
+     margin-left: 1em; 
+     margin-top: 2px;
+   }
+ }
+  
+  
+  
