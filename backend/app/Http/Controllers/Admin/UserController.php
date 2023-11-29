@@ -19,9 +19,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(UserDataTable $userDataTable)
+    public function index(): View
     {
-        return $userDataTable->render('admin.users.index', [$userDataTable]);
+        $users = User::all();
+        // $roles = Role::with('users');
+        return view('admin.users.index')->with(['users' => $users]);
     }
 
     /**
@@ -47,7 +49,7 @@ class UserController extends Controller
             $user = User::create($request->validated());
 
             foreach ($request->input('image') as $uploadedFile) {
-                $user->addMedia(storage_path('tmp/uploads/'.$uploadedFile))->toMediaCollection('user.image');
+                $user->addMedia(storage_path('tmp/uploads/' . $uploadedFile))->toMediaCollection('user.image');
             }
             if ($request->has('roles')) {
                 $roles = Role::whereIn('id', $request->roles)->get();
@@ -106,12 +108,12 @@ class UserController extends Controller
 
             // Handle media uploads
             foreach ($request->input('image') as $uploadedFile) {
-                $user->addMedia(storage_path('tmp/uploads/'.$uploadedFile))->toMediaCollection('user.image');
+                $user->addMedia(storage_path('tmp/uploads/' . $uploadedFile))->toMediaCollection('user.image');
             }
 
             // Remove old media if needed (optional)
             $mediaCollection->each(function ($media) use ($request) {
-                if (! in_array($media->file_name, $request->input('image'), true)) {
+                if (!in_array($media->file_name, $request->input('image'), true)) {
                     $media->delete();
                 }
             });

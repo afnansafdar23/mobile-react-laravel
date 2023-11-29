@@ -27,7 +27,13 @@
 <script type="text/javascript">
     var uploadedDocumentMap = {};
         var myDropzone = new Dropzone(
-            '#kt_dropzonejs_example_2', {
+            '<?php
+            if (isset($dropzone_name)) {
+                echo '#' . $dropzone_name;
+            } else {
+                echo '#kt_dropzonejs_example_2';
+            }
+            ?>', {
                 url: '{{ route('file.upload') }}',
                 maxFiles: 1, // MB
                 addRemoveLinks: true,
@@ -35,9 +41,26 @@
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"
                 },
                 success: function(file, response) {
-                    $('form').append('<input type="hidden" name="image" value="' + response.name +
+                    $('form').append('<input type="hidden" name=" <?php
+                    if (isset($image_name)) {
+                        echo $image_name;
+                    } else {
+                        echo 'image';
+                    }
+                    ?>" value="' + response.name +
                         '">')
                     uploadedDocumentMap[file.name] = response.name
+                },
+                removedfile: function(file) {
+                    file.previewElement.remove()
+                    $('form').find('input[name="image"][value="' + file.name + '"]').remove()
+                    var name = ''
+                    if (typeof file.file_name !== 'undefined') {
+                        name = file.file_name
+                    } else {
+                        name = uploadedDocumentMap[file.name]
+                    }
+                    $('form').find('input[name="image"][value="' + name + '"]').remove()
                 },
                 removedfile: function(file) {
                     file.previewElement.remove()

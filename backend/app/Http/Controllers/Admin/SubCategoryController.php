@@ -20,9 +20,11 @@ class SubCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(SubCategoryDatatable $subCategoryDataTable)
+    public function index(): View
     {
-        return $subCategoryDataTable->render('admin.sub-category.index', [$subCategoryDataTable]);
+        $childCategories = ChildCategory::all();
+        $subCategories = SubCategory::all();
+        return view('admin.sub-category.index')->with(['childCategories' => $childCategories, 'subCategories' => $subCategories]);
     }
 
     /**

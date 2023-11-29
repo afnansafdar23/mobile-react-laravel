@@ -12,7 +12,6 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\CheckoutController;
-use App\Http\Controllers\Frontend\DefaultController;
 use App\Http\Controllers\Setting\ColorController;
 use App\Http\Middleware\Permissions;
 use Illuminate\Support\Facades\Route;
@@ -40,26 +39,6 @@ Route::withoutMiddleware([Permissions::class])->group(function () {
             Route::get('register', 'registerView')->name('register');
             Route::post('check-register', 'checkRegister')->name('check.register');
             Route::get('logout', 'logout')->name('logout');
-        });
-
-    Route::controller(DefaultController::class)
-        ->group(function () {
-            Route::get('/', 'home')->name('home');
-            Route::get('category/{parentCategory}', 'productByCat')->name('category.product');
-            Route::get('child/product/{childCategory:id}', 'productByChildCat')->name('category.product.child');
-            Route::get('sub/product/{subCategory}', 'productBySubCat')->name('category.product.sub');
-            Route::get('product/detail/{product}', 'detailedProduct')->name('product.details');
-            Route::get('product/cart/{product:id}', 'addToCart')->name('product.add.cart');
-            Route::patch('update/cart', 'updateCart')->name('update.cart');
-            Route::delete('remove/cart', 'removeCart')->name('remove.from.cart');
-            Route::get('/contact', 'contact')->name('contact');
-            Route::get('/blogs/all', 'allBlog')->name('all-blogs');
-            Route::get('/blog/single', 'singleBlog')->name('single-blog');
-            Route::get('/about', 'about')->name('about');
-            Route::get('/career', 'career')->name('career');
-            Route::get('/term/conditions', 'termCondition')->name('term-conditions');
-            Route::get('/data/privacy', 'dataPrivacy')->name('data-privacy');
-            Route::get('/web/login', 'webLogin')->name('web.login');
         });
 });
 
@@ -104,11 +83,9 @@ Route::middleware('auth')->group(function () {
         ->name('parent.category.')
         ->group(function () {
             Route::get('index', 'index')->name('index');
-            Route::get('create', 'create')->name('create');
             Route::post('store', 'store')->name('store');
-            Route::get('edit/{parentCategory}', 'edit')->name('edit');
             Route::post('update/{parentCategory}', 'update')->name('update');
-            Route::get('delete/{parentCategory}', 'destroy')->name('delete');
+            Route::get('delete/{parentCategory}', 'destroy')->name('destroy');
         });
 
     Route::controller(ChildCategoryController::class)
@@ -116,11 +93,9 @@ Route::middleware('auth')->group(function () {
         ->name('child.category.')
         ->group(function () {
             Route::get('index', 'index')->name('index');
-            Route::get('create', 'create')->name('create');
             Route::post('store', 'store')->name('store');
-            Route::get('edit/{childCategory}', 'edit')->name('edit');
             Route::post('update/{childCategory}', 'update')->name('update');
-            Route::get('delete/{childCategory}', 'destroy')->name('delete');
+            Route::get('delete/{childCategory}', 'destroy')->name('destroy');
         });
 
     Route::controller(SubCategoryController::class)
@@ -132,7 +107,7 @@ Route::middleware('auth')->group(function () {
             Route::post('store', 'store')->name('store');
             Route::get('edit/{subCategory}', 'edit')->name('edit');
             Route::post('update/{subCategory}', 'update')->name('update');
-            Route::get('delete/{subCategory}', 'destroy')->name('delete');
+            Route::get('delete/{subCategory}', 'destroy')->name('destroy');
         });
 
     Route::controller(ProductController::class)
@@ -144,7 +119,7 @@ Route::middleware('auth')->group(function () {
             Route::post('store', 'store')->name('store');
             Route::get('edit/{product}', 'edit')->name('edit');
             Route::post('update/{product}', 'update')->name('update');
-            Route::get('delete/{product}', 'destroy')->name('delete');
+            Route::get('delete/{product}', 'destroy')->name('destroy');
         });
 
     Route::controller(RoleController::class)
@@ -182,9 +157,9 @@ Route::middleware('auth')->group(function () {
             Route::get('destroy/{color}', 'destroy')->name('destroy');
         });
 
-    Route::controller(CheckoutController::class)->group(function () {
-        Route::get('/cart', 'cart')->name('cart.product');
-        Route::post('stripe', 'stripePost')->name('stripe.post');
-        Route::post('store/order', 'storeOrder')->name('order.post');
-    });
+    // Route::controller(CheckoutController::class)->group(function () {
+    //     Route::get('/cart', 'cart')->name('cart.product');
+    //     Route::post('stripe', 'stripePost')->name('stripe.post');
+    //     Route::post('store/order', 'storeOrder')->name('order.post');
+    // });
 });

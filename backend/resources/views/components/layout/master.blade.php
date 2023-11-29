@@ -4,10 +4,10 @@
 
 <head>
     <base href="../../../" />
-    <title>Iphone Gadget Case</title>
+    <title>Gadget Glamour</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Iphone Gadget Case" />
-    <meta name="keywords" content="Iphone Gadget Case" />
+    <meta name="description" content="Gadget Glamour" />
+    <meta name="keywords" content="Gadget Glamour" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
@@ -30,17 +30,17 @@
 <!--end::Head-->
 <!--begin::Body-->
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true"
-    data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true"
-    data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true"
-    data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
-    <!--begin::App-->
-    <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
+<body id="kt_body"
+    class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed toolbar-tablet-and-mobile-fixed aside-enabled aside-fixed"
+    style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
         <!--begin::Page-->
-        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+        <div class="page d-flex flex-row flex-column-fluid">
             {{ $left_side_nav ?? '' }}
             <!--begin::Wrapper-->
-            <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 {{ $header ?? '' }}
                 {{ $content ?? '' }}
                 {{ $footer ?? '' }}

@@ -19,9 +19,10 @@ class PermissionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(PermissionDataTable $permissionDataTable)
+    public function index(): View
     {
-        return $permissionDataTable->render('admin.permissions.index', [$permissionDataTable]);
+        $permissions = Permission::all();
+        return view('admin.permissions.index')->with(['permissions' => $permissions]);
     }
 
     /**

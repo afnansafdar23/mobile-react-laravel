@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DataTables\ChildCategoryDatatable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ChildCategory\StoreCategoryRequest;
 use App\Http\Requests\ChildCategory\UpdateCategoryRequest;
@@ -19,19 +18,12 @@ class ChildCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ChildCategoryDatatable $childCategoryDataTable)
-    {
-        return $childCategoryDataTable->render('admin.child-category.index', [$childCategoryDataTable]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): View
+    public function index(): View
     {
         $parentCategories = ParentCategory::all();
+        $childCategories = ChildCategory::all();
 
-        return view('admin.child-category.create')->with('parentCategories', $parentCategories);
+        return view('admin.child-category.index')->with(['childCategories' => $childCategories, 'parentCategories' => $parentCategories]);
     }
 
     /**
@@ -64,16 +56,6 @@ class ChildCategoryController extends Controller
     public function show($id)
     {
         //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ChildCategory $childCategory): View
-    {
-        $parentCategories = ParentCategory::all();
-
-        return view('admin.child-category.edit')->with(['childCategory' => $childCategory, 'parentCategories' => $parentCategories]);
     }
 
     /**

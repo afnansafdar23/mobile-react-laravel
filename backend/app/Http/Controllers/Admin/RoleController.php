@@ -19,9 +19,10 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(RoleDataTable $roleDataTable)
+    public function index(): View
     {
-        return $roleDataTable->render('admin.roles.index', [$roleDataTable]);
+        $roles = Role::all();
+        return view('admin.roles.index')->with(['roles' => $roles]);
     }
 
     /**

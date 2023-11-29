@@ -6,6 +6,7 @@ use App\DataTables\ProductDatatable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\StoreProductRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
+use App\Models\Color;
 use App\Models\SubCategory;
 use App\Models\Product;
 use Exception;
@@ -20,9 +21,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ProductDatatable $productDatatable)
+    public function index(): View
     {
-        return $productDatatable->render('admin.product.index', [$productDatatable]);
+        $products = Product::all();
+        $subCategories = SubCategory::all();
+        $colors = Color::all();
+        return view('admin.product.index')->with(['products' => $products, 'subCategories' => $subCategories, 'colors' => $colors]);
     }
 
     /**

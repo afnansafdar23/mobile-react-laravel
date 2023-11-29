@@ -12,10 +12,10 @@
                 @csrf
                 <div class="p-5">
                     @if (Session::has('error'))
-                        <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                    <div class="alert alert-danger">{{ Session::get('error') }}</div>
                     @endif
                     @if (Session::has('success'))
-                        <div class="alert alert-success">{{ Session::get('success') }}</div>
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>
                     @endif
                     <div class="card mb-xl-8 mb-5" style="user-select: auto;">
                         <!--begin::Header-->

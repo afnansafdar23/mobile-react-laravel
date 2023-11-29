@@ -28,14 +28,12 @@ class StoreProductRequest extends FormRequest
             'name' => ['required', Rule::unique('products', 'name')->ignore($this->name)],
             'description' => 'required',
             'price' => 'required',
-            'discounted_price' => 'nullable',
             'availability' => 'nullable',
-            'features' => 'required',
-            'color' => 'nullable',
-            'part_number' => 'required',
+            'key_feature' => 'required',
+            'color_id' => 'required',
+            'product_unique_id' => 'required',
             'manufacturer' => 'required',
             'sub_category_id' => 'required',
-            'avatar' => 'nullable',
         ];
     }
 }
